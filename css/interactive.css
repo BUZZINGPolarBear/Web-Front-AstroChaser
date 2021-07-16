@@ -5,6 +5,7 @@
 body {
   overflow-x: hidden;
   background: linear-gradient(#000, #011244);
+  height: 30000px;
 }
 
 main {
@@ -13,12 +14,9 @@ main {
 
 .textWrap {
   position : absolute;
-  left: 50%;
+  left: 45vw;
   top: 300px;
-  margin: auto;
   transform: translate(-50%, -50%);
-  width: 60%;
-
   z-index : 3;
   transform-style: preserve-3d; 
   perspective: 300px;
@@ -61,50 +59,20 @@ section.mainPage h1.title {
 }
 
 section.mainPage .imageWrap {
-  height: 100vh;
+  left: 7vw;
+  width: 90vw;
   position: fixed;
-  display: grid;
-  height: 100%;
+  display: flex;
 }
 
 section.mainPage .imageWrap .parallax_image {
   position: fixed;
-  width: 100%;
+  /* width: 100%; */
   height: inherit;
   background-position: top center;
   background-size: auto 100%;
   background-repeat: no-repeat;
   perspective: 300px;
-}
-
-section.mainPage .imageWrap .parallax_image:nth-child(1) {
-  background-image: url(../image/main_0.png);
-}
-
-section.mainPage .imageWrap .parallax_image:nth-child(2) {
-  background-image: url(../image/main_1.png);
-}
-
-section.mainPage .imageWrap .parallax_image:nth-child(3) {
-  background-image: url(../image/main_2.png);
-}
-
-section.mainPage .imageWrap .parallax_image:nth-child(4) {
-  background-image: url(../image/main_3.png);
-}
-
-section.mainPage .imageWrap .parallax_image:nth-child(5) {
-  background-image: url(../image/main_4.png);
-}
-
-section.mainPage .imageWrap .parallax_image:nth-child(6) {
-  background-image: url(../image/main_5.png);
-  background-size: cover;
-}
-
-section.mainPage .imageWrap .parallax_image:nth-child(7) {
-  background-image: url(../image/main_6.png);
-  background-size: cover;
 }
 
 section.subPage {
@@ -152,38 +120,34 @@ section.subPage.lastPage .innerWrap .contWrap {
 
 #stars1 {
   width: 90%;
-  height: 100%;
-  max-width: 100%;
-  max-height: 100vh;
-  margin: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
 }
 
 #stars2 {
   position: absolute;
+  display: block;
   width: 90%;
-  height: 100%;
-  top: 2px;
-  left: 5%;
-  max-width: 100%;
-  max-height: 100vh;
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
+
   z-index: 1;
 }
 
 #stars3 {
   position: absolute;
+  display: block;
   width: 90%;
-  height: 100%;
-  top: 2px;
-  left: 5%;
-  max-width: 100%;
-  max-height: 100vh;
-  margin: auto;
+  margin: 0auto;  
+  /* margin-left: auto;
+  margin-right: auto; */
   z-index: 2;
 }
 
 #moveMouse{
   width: 5%;
   margin-left: 50%;
-  z-index: 3;
+  z-index: -1;
 }

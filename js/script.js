@@ -19,7 +19,7 @@ window.onload = function(){
   window.addEventListener("mousemove", mouseFunc, false);
 
   // window.addEventListener('resize', stageResize, false);
-  window.addEventListener('scroll', scrollFunc);
+  //window.addEventListener('scroll', scrollFunc);
   function mouseFunc(e)
   {
     x = (e.clientX - window.innerWidth / 2);
@@ -47,19 +47,19 @@ function loop(){
 
 
 
-function scrollFunc(e) {
-    scrollTop = this.scrollY;
+// function scrollFunc(e) {
+//     scrollTop = this.scrollY;
 
-    // let per = Math.ceil(scrollTop / (_documentHum - _windowHNum) * 100);
-    // progressBar.style.width = per + "%";
+//     // let per = Math.ceil(scrollTop / (_documentHum - _windowHNum) * 100);
+//     // progressBar.style.width = per + "%";
 
-    for(var i=0; i< totalNum ; i++){
-        imageAll[i].style.transform = "perspective(400px) translateZ("+ scrollTop/(5*(totalNum-i)) +"px)";
-        // imageAll[i].style.transform = "perspective(400px) translateZ("+ scrollTop/5 +"px)";
-        console.log(scrollTop , scrollTop / (5*(totalNum-i)) );
-    }
+//     for(var i=0; i< totalNum ; i++){
+//         imageAll[i].style.transform = "perspective(400px) translateZ("+ scrollTop/(5*(totalNum-i)) +"px)";
+//         // imageAll[i].style.transform = "perspective(400px) translateZ("+ scrollTop/5 +"px)";
+//         console.log(scrollTop , scrollTop / (5*(totalNum-i)) );
+//     }
 
-}
+// }
 
 // function stageResize() {
 //     _documentHum = document.body.offsetHeight; 
