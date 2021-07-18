@@ -4,7 +4,7 @@
 
 body {
   overflow-x: hidden;
-  background: linear-gradient(#000, #011244);
+  background: linear-gradient(110deg, rgb(9, 17, 11), #011244);
   height: 30000px;
 }
 
@@ -150,4 +150,12 @@ section.subPage.lastPage .innerWrap .contWrap {
   width: 5%;
   margin-left: 50%;
   z-index: -1;
+}
+
+#intoTheStars{
+  position: fixed;
+  left: 0;
+  width: 100vw;
+  opacity: -1;
+  z-index: 10;
 }
