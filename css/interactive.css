@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'EliceDigitalBaeum_Bold';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/EliceDigitalBaeum_Bold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -86,7 +93,7 @@ section.subPage .innerWrap {
 
 section.subPage .innerWrap .contWrap {
   margin: 0 auto;
-  background-color: rgba(0, 0, 0, 0.6);
+  /* background-color: rgba(0, 0, 0, 0.6); */
   padding: 20px 40px;
   width: 700px;
 }
@@ -98,23 +105,27 @@ section.subPage .innerWrap .contWrap {
 }
 
 section.subPage .innerWrap .contWrap p {
-  font-size: 16px;
-  line-height: 30px;
+  font-family: 'EliceDigitalBaeum_Bold';
+  text-align: center;
+  font-size: 30px;
+  line-height: 40px;
   color: #fff;
-  margin: 20px 0;
+  margin: 50px 0;
 }
 
-section.subPage.lastPage {
+section.subPage.upperPage {
   margin-top: 2000px;
+  width: 100vw;
+  z-index: 20;
 }
 
-section.subPage.lastPage .innerWrap {
+section.subPage.upperPage .innerWrap {
   width: 100%;
   padding: 50px 0;
-  background-color: rgba(0, 0, 0, 0.9);
+  /* background-color: rgba(0, 0, 0, 0.2); */
 }
 
-section.subPage.lastPage .innerWrap .contWrap {
+section.subPage.upperPage .innerWrap .contWrap {
   background-color: rgba(0, 0, 0, 0);
 }
 
@@ -158,4 +169,23 @@ section.subPage.lastPage .innerWrap .contWrap {
   width: 100vw;
   opacity: -1;
   z-index: 10;
+}
+
+.scroll-section {
+  position: relative;
+  /* border: 3px solid red; */
+  padding-top: 50vh;
+}
+
+#scroll-section-0 h1 {
+  position: relative;
+  top: -10vh;
+  font-size: 4rem;
+  text-align: center;
+  z-index: 5;
+}
+
+#sattelliteImg{
+  position: relative;
+  width: 30%
 }
