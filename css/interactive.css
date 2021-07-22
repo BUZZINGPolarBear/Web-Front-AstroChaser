@@ -5,6 +5,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'SF_HambakSnow';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_HambakSnow.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -188,4 +195,64 @@ section.subPage.upperPage .innerWrap .contWrap {
 #sattelliteImg{
   position: relative;
   width: 30%
+}
+
+section.subPage.hexagons {
+  margin-top: 2000px;
+  width: 100vw;
+  height: 100vh;
+  z-index: 20;
+  animation: animate 4s linear infinite;
+}
+
+@keyframes animate
+{
+	0%
+	{
+		filter: hue-rotate(0deg);
+	}
+	100%
+	{
+		filter: hue-rotate(360deg);
+	}
+}
+.row
+{
+	display: inline-flex;
+	margin-top: -32px;
+	margin-left: -50px;
+}
+.row:nth-child(even)
+{
+	margin-left: 1px;
+}
+.hexagon
+{
+	position: relative;
+	width: 100px;
+	height: 110px;
+  font-family: 'SF_HambakSnow';
+	background: #111;
+  color: white;
+	/* margin: 1px 1px; */
+	clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+	transition: 2s;
+}
+
+.hexagon:hover
+{
+	transition: 0s;
+	background: #0f0;
+}
+.hexagon:before
+{
+	content: '';
+	position: absolute;
+  color: white;
+	top: 0;
+	left: 0;
+	width: 50%;
+	height: 100%;
+	pointer-events: none;
+	background: rgba(255,255,255,0.02);
 }

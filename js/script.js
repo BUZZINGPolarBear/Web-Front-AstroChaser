@@ -59,7 +59,11 @@ function scrollFunc(e) {
     intoTheStars.style.opacity = (newScrollTop/(document.body.scrollHeight)*20);
     //console.log( intoTheStars.style.opacity);
 
-    if(scrollPercent<=0.01) intoTheStars.style.opacity = 0;
+    if(scrollPercent<=0.01) 
+    {
+      intoTheStars.style.opacity = 0;
+      scrollCnt = 0;
+    }
      
     if(newScrollTop-oldScrollTop>10)
     {
@@ -92,9 +96,10 @@ function scrollFunc(e) {
       intoTheStars.opacity = 0;
       text3d.style.opacity = 0;
       intoTheStars.style.opacity = 1 - ((scrollCnt-100)*0.02);
-      console.log(intoTheStars.style.opacity);
+      //console.log(intoTheStars.style.opacity);
     }
     oldScrollTop = newScrollTop;
+    console.log("Scroll Cnt: " + scrollCnt);
 }
 
 function  drawIntoTheStars(i)
@@ -110,6 +115,6 @@ function introduceScroll()
 function endIntoTheStarsImg()
 {
   isIntoTheStarsEnd=true;
-  console.log(isIntoTheStarsEnd);
+ 
 }
 
