@@ -17,7 +17,6 @@ window.onload = function(){
   stars1 = document.getElementById("stars1");
   stars2 = document.getElementById("stars2");
   stars3 = document.getElementById("stars3");
-  moveMouse = document.getElementById("moveMouse");
   text3d = document.getElementsByClassName("text3d")[0];
   intoTheStars = document.getElementById("intoTheStars");
   sattellite = document.getElementById("sattelliteImg");
@@ -38,7 +37,6 @@ function loop(){
   mx += (x - mx) * speed;
   my += (y - my) * speed;
 
-  moveMouse.style.transform = "translate("+ (mx/12) +"px," +"0px)";
   stars1.style.transform = "translate("+ (mx/10) +"px," + (my/10) +"px)";
   stars2.style.transform = "translate("+ -(mx/15) +"px," + -(my/15) +"px)";
   stars3.style.transform = "translate("+ (mx/8) +"px," + -(my/8) +"px)";
@@ -79,7 +77,6 @@ function scrollFunc(e) {
     }
     if(scrollCnt<100)
     {
-      moveMouse.style.opacity = 1;
       stars1.style.opacity = 1;
       stars2.style.opacity = 1;
       stars3.style.opacity = 1;
@@ -89,7 +86,6 @@ function scrollFunc(e) {
     else if(scrollCnt==100) intoTheStars.style.opacity=1;
     else if(scrollCnt>100)
     {
-      moveMouse.style.opacity = 0;
       stars1.style.opacity = 0;
       stars2.style.opacity = 0;
       stars3.style.opacity = 0;
@@ -99,7 +95,6 @@ function scrollFunc(e) {
       //console.log(intoTheStars.style.opacity);
     }
     oldScrollTop = newScrollTop;
-    console.log("Scroll Cnt: " + scrollCnt);
 }
 
 function  drawIntoTheStars(i)
