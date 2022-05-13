@@ -8,13 +8,24 @@ body {
 
 }
 
-.mainLoginBox
+.box
 {
-  background-color: #9999;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  background-color: #CCDC;
   border-radius: 25px;
-  display: flex;
   justify-content: center;
   align-items: center;
-  height: 380px;
+}
+
+#login
+{
+  height: 260px;
   width: 400px;
+}
+
+.emailLabel{
+    margin-top: 30px;
+    margin-left: 30px;
+    font-size: 16px;
 }
