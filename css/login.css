@@ -29,3 +29,7 @@ body {
     margin-left: 30px;
     font-size: 16px;
 }
+
+.button{
+    z-index: 2000;
+}
