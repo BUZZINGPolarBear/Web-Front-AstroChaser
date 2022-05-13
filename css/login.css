@@ -1,0 +1,20 @@
+body {
+  display: flex;
+  background: linear-gradient(110deg, rgb(9, 17, 11), #011244);
+
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+}
+
+.mainLoginBox
+{
+  background-color: #9999;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 380px;
+  width: 400px;
+}
