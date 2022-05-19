@@ -1,0 +1,21 @@
+body{
+    background-color: rgb(7, 9, 39);
+    width: 100vw;
+    height: 3600px;
+}
+
+.leftNavBar{
+    float: left;
+    background-color: aqua;
+    margin-left: 6vw;
+    width: 10vw;
+    height: 80vh;
+}
+
+.rightContentBox{
+   float: left;
+    background-color: bisque;
+
+    width: 80vw;
+    height: 80vh;
+}
