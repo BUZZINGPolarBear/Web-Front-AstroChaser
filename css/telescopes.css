@@ -1,7 +1,7 @@
 body{
     background-color: rgb(7, 9, 39);
     width: 100vw;
-    height: 3600px;
+    height: 1000px;
 }
 
 .leftNavBar{
@@ -14,10 +14,12 @@ body{
 
 .rightContentBox{
    float: left;
-    background-color: bisque;
+
+   border-left: 3px solid rgba(229, 229, 227, 0.6);
+   
+   padding-left: 20px;
 
     width: 80vw;
-    height: 80vh;
     
 }
 
@@ -47,4 +49,8 @@ body{
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+}
+
+.mainContents{
+    margin-top: 10px;
 }
