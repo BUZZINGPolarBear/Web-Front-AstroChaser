@@ -1,7 +1,7 @@
 body{
     background-color: rgb(7, 9, 39);
-    width: 100vw;
-    height: 1000px;
+    /* width: 100vw;
+    height: 1000px; */
 }
 
 .leftNavBar{
@@ -53,4 +53,8 @@ body{
 
 .mainContents{
     margin-top: 10px;
+}
+
+img{
+    height: 450px;
 }
