@@ -17,25 +17,25 @@
         <div class="field">  
             <label class="label">이름</label>
             <div class="control">
-              <input class="input" type="email" placeholder="e.g. 이시형">
+              <input class="input" type="text" id="name" placeholder="e.g. 이시형">
             </div>
         </div>
 
         <div class="field">  
           <label class="label">Email</label>
           <div class="control">
-            <input class="input" type="email" placeholder="e.g. jjh63360@example.com">
+            <input class="input" type="email" id="email" placeholder="e.g. jjh63360@example.com">
           </div>
         </div>
       
         <div class="field">
           <label class="label">비밀번호</label>
           <div class="control">
-            <input class="input" type="password" placeholder="********">
+            <input class="input" type="password" id="password1" placeholder="********">
           </div>
           <label class="label">비밀번호 재입력</label>
           <div class="control">
-            <input class="input" type="password" placeholder="********">
+            <input class="input" type="password" id="password2" placeholder="********">
           </div>
         </div>
 
@@ -47,8 +47,8 @@
             </div>
             <div class="columns is-mobile">
                 <div class="column" id="selectBox">
-                    <div class="select" id="memberOption">
-                        <select>
+                    <div class="select">
+                        <select id="memberOption">
                           <option>방문자</option>
                           <option>일반 회원</option>
                           <option>운영진</option>
@@ -58,8 +58,8 @@
 
                 <div class="column" id="selectBox">
                     <div class="column" style="padding-top: 0px; padding-left: 0px;">
-                        <div class="select" id="generationOption">
-                            <select>
+                        <div class="select" >
+                            <select id="generationOption">
                               <option>1기</option>
                               <option>2기</option>
                               <option>3기</option>
@@ -72,10 +72,8 @@
             <button class="button is-hovered" id="sigupBtn">회원가입</button>
             
         </div>
-
-
-
-    
     </form>
 </body>
+<script src="./js/hostAddr.js"></script>
+<script src="./js/signup.js"></script>
 </html>
