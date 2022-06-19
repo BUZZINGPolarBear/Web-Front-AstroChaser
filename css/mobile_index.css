@@ -1,0 +1,92 @@
+.topNav{
+    width: 100vw;
+    height: 5vh;
+
+    background-color: #060b33;
+}
+
+.topLogoImg{
+    float: left;
+    height: 100%;
+    width: 30vw;
+
+    background-image: url(../image/Astro\ logo\ intro.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.mainScreen{
+    position: relative;
+    width: 100vw;
+}
+
+.bottomNav{
+    position: absolute;
+    width: 100vw;
+    height: 8vh;
+    bottom: 0;
+
+    background-color: aqua;
+}
+
+
+.nav-content-1{
+    float: left;
+    height: 100%;
+    width: 15vw;
+
+    cursor: pointer;
+
+    margin-left: 15vw;
+
+    background-image: url(../image/icons/icons8-home-150-colored.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.nav-content-2{
+    float: left;
+    height: 100%;
+    width: 15vw;
+
+    margin-left: 2.5vw;
+
+    cursor: pointer;
+
+    background-image: url(../image/icons/icons8-document-150.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.nav-content-3{
+    float: left;
+    height: 100%;
+    width: 15vw;
+
+    margin-left: 2.5vw;
+
+    cursor: pointer;
+
+    background-image: url(../image/icons/icons8-document-150.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.nav-content-4{
+    float: left;
+    height: 100%;
+    width: 15vw;
+
+    margin-left: 2.5vw;
+
+    cursor: pointer;
+
+    background-image: url(../image/icons/icons8-document-150.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
