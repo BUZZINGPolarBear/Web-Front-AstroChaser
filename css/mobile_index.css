@@ -1,3 +1,6 @@
+body{
+    background-color: #060b33;
+}
 .topNav{
     width: 100vw;
     height: 5vh;
@@ -18,7 +21,7 @@
 
 .sketchfab-embed-wrapper{
     width: 100vw;
-    height: 80vw;
+    height: 60vw;
 }
 
 .mainScreen{
@@ -29,13 +32,26 @@
     background-color: #060b33;
 }
 
+.indexHeadline{
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+}
+
+.mainAstrochaserLogo{
+    width: 100vw;
+    height: 20vh;
+
+    background-image: url(../image/AC\ logo\ 1.jpeg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
 .bottomNav{
-    position: absolute;
     width: 100vw;
     height: 8vh;
-    bottom: 0;
 
-    background-color: aqua;
+    background-color: rgb(246, 246, 246);
 }
 
 
