@@ -2,7 +2,7 @@
     width: 100vw;
     height: 5vh;
 
-    background-color: #060b33;
+    background-color: rgb(40, 40, 40);
 }
 
 .topLogoImg{
@@ -16,9 +16,17 @@
     background-position: center;
 }
 
+.sketchfab-embed-wrapper{
+    width: 100vw;
+    height: 80vw;
+}
+
 .mainScreen{
     position: relative;
     width: 100vw;
+    color: azure;
+
+    background-color: #060b33;
 }
 
 .bottomNav{
@@ -90,3 +98,4 @@
     background-repeat: no-repeat;
     background-position: center;
 }
+

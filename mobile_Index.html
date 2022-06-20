@@ -16,8 +16,55 @@
     <div class="topNav">
         <div class="topLogoImg"></div>
     </div>
+    <div class="sketchfab-embed-wrapper"> 
+        <iframe title="Moon" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width="100%" height="80%" 
+             src="https://sketchfab.com/models/4db2273f6dd943b8ad7fa5e3b1b2431a/embed?autospin=1&autostart=1&ui_hint=0"> 
+        </iframe>
+    </div>
+
+    <!-- <canvas id="canvas" width="1200px" height="1200px"></canvas>
+        <script type="importmap">
+            {
+                "imports": {
+                  "three": "https://unpkg.com/three@0.141.0/build/three.module.js",
+                  "GLTFLoader" : "https://unpkg.com/three@0.141.0/examples/jsm/loaders/GLTFLoader.js"
+                }
+            }
+        </script>
+        
+        <script type="module">
+            import {GLTFLoader} from 'GLTFLoader';
+            import * as THREE from 'three';
+
+            let scene = new THREE.Scene();
+            
+            let renderer = new THREE.WebGLRenderer({
+                canvas : document.querySelector('#canvas')
+            });
+            
+            let camera = new THREE.PerspectiveCamera(30, 1);
+            camera.position.set(0, 0, 0)
+            camera.lookAt(new THREE.Vector3(0, 0, -800));
+            
+            const light = new THREE.DirectionalLight( 0xffffff, 1 );
+            light.position.set( 0, 0, 0 ); //default; light shining from top
+            scene.add(light);
+
+            let loader = new GLTFLoader();
+            loader.load('./3d_model/moon2/scene.gltf', function(gltf){
+                scene.add(gltf.scene);
+                document.addEventListener( 'mousewheel', (event) => {
+                    camera.position.z +=event.deltaY/500;
+                });
+                renderer.render(scene, camera);
+            });
+
+            
+
+        </script> -->
     <div class="mainScreen">
-        hihihi
+        
+        
     </div>
 
     <div class="bottomNav">
@@ -27,4 +74,5 @@
         <div class="nav-content-4" onclick="location.href='http://52.79.239.114:8080/user'"></div>
     </div>
 </body>
+<!-- <script type="text/javascript" src="./js/mobileIndexMoon3d.js"></script> -->
 </html>
