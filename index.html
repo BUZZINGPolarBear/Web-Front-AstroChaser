@@ -12,10 +12,14 @@
     <link rel="stylesheet" type="text/css" href="./css/index.css" />
     <link rel="stylesheet" type="text/css" href="./css/reset.css" />
     <link rel="stylesheet" type="text/css" href="./css/interactive.css" />
+    <link href='./packages/core/main.css' rel='stylesheet' />
+    <link href='./packages/daygrid/main.css' rel='stylesheet' />
+    <script src='./packages/core/main.js'></script>
+    <script src='./packages/interaction/main.js'></script>
+    <script src='./packages/daygrid/main.js'></script>
+    <script type="text/javascript" src="./js/spaceCalendar.js"></script>
     <script type="text/javascript" src="./js/index.js"></script>
     <script type="text/javascript" src="./js/hostAddr.js"></script>
-    
-
 </head>
 <body>
     <main>
@@ -84,24 +88,48 @@
          
         <section class="subPage upperPage">
             <div class="innerWrap">
-                <div class="contWrap" id = "firstIntroduce">
-                    <p>한국항공대<br>아스트로체이서</p>
+                <div class="contWrap" id = "firstIntroduce" style="height: auto;">
+                  
+                  <div class="tile is-ancestor">
+                    <div class="tile is-4 is-vertical is-parent">
+                      <div class="tile is-child box">
+                        <p class="title">공지사항</p>
+                        <p>
+                          <div class="content">
+                            <ul>
+                              <li>2022 6월 정기관측회 안내</li>
+                              <li>MT안내</li>
+                              <li>홈페이지가 개설되었습니다!</li>
+                            </ul>
+                          </div>
+                        </p>
+                      </div>
+                      <div class="tile is-child box">
+                        <p class="title">별지기 게시판</p>
+                        <p>
+                          <div class="content">
+                            <ul>
+                              <li>이런</li>
+                              <li>저런</li>
+                              <li>게시글들</li>
+                            </ul>
+                          </div>
+                        </p>
+                      </div>
+                    </div>
+                    <div class="tile is-parent">
+                      <div class="tile is-child box">
+                        <p class="title">천문력</p>
+                        <div id='calendar'></div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
 
-                <div class="contWrap" id = "firstIntroduce" style="margin-top: 700px;">
-                    <image src="./image/Sattellite.png" id="sattelliteImg"></image>
-                    <p>2022년 소모임으로 시작된 Astro chaser는 현재<br>150명의 별지기와 함께 순항하고 있습니다.</p>
-                </div>
-
-                <div class="contWrap" id = "firstIntroduce" style="margin-top: 700px;">
-                    <p>6대의 망원경과 천문대와의 협약이 맺어진<br> Astro chaser!<br>우리의 활동을 확인해보세요.<br><br>
-                        <button class="button is-link" onclick="window.open('https://www.instagram.com/kau_astro_chaser/')">Astro Chaser 인스타그램</button></p>
-                    <script type="text/javascript">
-                    </script>
-                </div>
             </div>
         </section> 
     </main>
 </body>
 <script type="text/javascript" src="./js/navHref.js"></script>
+
 </html>
