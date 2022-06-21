@@ -113,3 +113,13 @@ function endIntoTheStarsImg()
  
 }
 
+$(document).ready(function() {
+  $('#guestbookContent').on('keyup', function() {
+      $('#guestbookContent_cnt').html("("+$(this).val().length+" / 200)");
+
+      if($(this).val().length > 200) {
+          $(this).val($(this).val().substring(0, 200));
+          $('#guestbookContent_cnt').html("(200 / 200)");
+      }
+  });
+});
