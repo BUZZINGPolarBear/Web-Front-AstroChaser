@@ -59,7 +59,7 @@
   width: 100%;
   height: 70%;
 
-  background-color: rgb(255, 243, 231);
+  
 }
 
 .guestbook-area-contents{
@@ -68,5 +68,30 @@
 
   margin-top: 15px;
 
-  background-color: aquamarine;
+  border-bottom: 1px solid rgb(75, 75, 75);
+}
+.guestbook-writer-info-area{
+
+  width: 40%;
+  height: 25%;
+}
+
+.guestbook-writer-name-info{
+  float: left;
+
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.guestbook-writer-time-info{
+  float: left;
+
+  margin-left: 15px;
+}
+
+.guestbook-user-content{
+  width: 100%;
+
+  margin-top: 15px;
 }
