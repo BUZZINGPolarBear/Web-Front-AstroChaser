@@ -4,54 +4,69 @@
     overflow: hidden;
   }
   
-  /* Style the links inside the navigation bar */
-  .topnav a {
-    float: left;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-  }
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
 
-  .topnav .signInUp{
-    float: right;
-    width: 380px;
-    height: 45px;
-  }
-  
-  /* Change the color of links on hover */
-  .topnav a:hover {
-    background-color: #ddd;
-    color: black;
-  }
-  
-  /* Add a color to the active/current link */
-  .topnav a.active {
-    color: white;
-  }
+.topnav .signInUp{
+  float: right;
+  width: 380px;
+  height: 45px;
+}
 
-  .guestBookWriterInfoBox{
-    margin-top: 5px;
-    width: 100%;
-    height: 5%;
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
 
-    vertical-align: auto;
-    text-align: center;
+/* Add a color to the active/current link */
+.topnav a.active {
+  color: white;
+}
 
-  }
+.guestBookWriterInfoBox{
+  margin-top: 5px;
+  width: 100%;
+  height: 5%;
 
-  #guestbookContent_cnt{
-    float: left;
-    margin-top: 1%;
+  vertical-align: auto;
+  text-align: center;
 
-    vertical-align: auto;
-  }
+}
 
-  #guestbookCommit{
-    float: right;
+#guestbookContent_cnt{
+  float: left;
+  margin-top: 1%;
 
-    width: 30%;
-    height: 100%;
+  vertical-align: auto;
+}
 
-  }
+#guestbookCommit{
+  float: right;
+
+  width: 30%;
+  height: 100%;
+}
+
+.guestbook-area{
+  width: 100%;
+  height: 70%;
+
+  background-color: rgb(255, 243, 231);
+}
+
+.guestbook-area-contents{
+  width: 100%;
+  height: 18%;
+
+  margin-top: 15px;
+
+  background-color: aquamarine;
+}

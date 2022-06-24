@@ -13,13 +13,17 @@ var context, canvas;
 var sattelliteStartScroll, sattellite;
 var isIntoTheStarsEnd = false; 
 
+const responseRes = get("nickname.hwanmoo.kr", "?format=text")  
+      .then((data) => {console.log(data)})
+      
 window.onload = function(){
+
   stars1 = document.getElementById("stars1");
   stars2 = document.getElementById("stars2");
   stars3 = document.getElementById("stars3");
   text3d = document.getElementsByClassName("text3d")[0];
   intoTheStars = document.getElementById("intoTheStars");
-  sattellite = document.getElementById("sattelliteImg");
+  // sattellite = document.getElementById("sattelliteImg");
 
   window.addEventListener("mousemove", mouseFunc, false);
 
@@ -31,6 +35,7 @@ window.onload = function(){
     y = (e.clientY - window.innerHeight / 2);
   }
   loop();
+  
 }
 
 function loop(){
@@ -41,7 +46,7 @@ function loop(){
   stars2.style.transform = "translate("+ -(mx/15) +"px," + -(my/15) +"px)";
   stars3.style.transform = "translate("+ (mx/8) +"px," + -(my/8) +"px)";
   intoTheStars.style.transform = "translate("+ (mx/15) +"px," + -(my/15) +"px)";
-  sattellite.style.transform = "translate("+ (mx) +"px," + (my) +"px)";
+  // sattellite.style.transform = "translate("+ (mx) +"px," + (my) +"px)";
 
   //3d 텍스트 모션
   //rotate3d 속성
@@ -123,3 +128,55 @@ $(document).ready(function() {
       }
   });
 });
+
+async function request() {
+  const response = await fetch('http://nickname.hwanmoo.kr/?format=json&count=1',
+  {
+    mode : 'no-cors',
+    method: 'GET',
+  });
+  console.log(response)
+
+  
+}
+
+async function post(host, path, body, headers = {}) {
+  const url = `http://${host}/${path}`;
+  const options = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      ...headers,
+    },
+    body: JSON.stringify(body),
+  };
+  const res = await fetch(url, options);
+  const data = await res.json();
+  if (res.ok) {
+    return data;
+  } else {
+    throw new Error(data);
+  }
+}
+
+async function get(host, path, headers = {}) {
+  const url = `https://${host}/${path}`;
+  const options = {
+    method: "GET",
+    mode: "no-cors",
+    headers: {
+      "Content-Type": "application/json",
+      ...headers,
+    },
+  };
+  const res = await fetch(url, options);
+  const data = res.json();
+  console.log(res)
+  console.log(data)
+  if (res.ok) {
+    return data;
+  } else {
+    throw new Error(data);
+  }
+}
+
