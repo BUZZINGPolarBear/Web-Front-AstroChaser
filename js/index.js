@@ -12,9 +12,6 @@ let scrollCnt = 0;
 var context, canvas;
 var sattelliteStartScroll, sattellite;
 var isIntoTheStarsEnd = false; 
-
-const responseRes = get("nickname.hwanmoo.kr", "?format=text")  
-      .then((data) => {console.log(data)})
       
 window.onload = function(){
 
@@ -35,6 +32,33 @@ window.onload = function(){
     y = (e.clientY - window.innerHeight / 2);
   }
   loop();
+
+  //방명록 전시하기
+  async function showGuestbookData(){
+    const guestbookData = await getAPI('localhost:8000', 'app/guestbook');
+  
+    console.log(guestbookData.result);
+    for(var i=0; i<guestbookData.result.length; i++)
+    {
+      var writer = guestbookData.result[i].writer;
+      var time = guestbookData.result[i].createdAt.substring(0,10) + " " + guestbookData.result[i].createdAt.substring(12,16);
+      var message = guestbookData.result[i].content;
+
+      var html ='';
+      html=(`<div class="guestbook-area-contents">
+              <div class="guestbook-writer-info-area">
+                <div class="guestbook-writer-name-info">${writer}</div>
+                <div class="guestbook-writer-time-info">${time}</div>
+              </div>
+              <div class="guestbook-user-content">${message}</div>                        
+            </div>`)
+
+      $(".guestbook-area").append(html);
+    }
+  }
+  showGuestbookData();
+
+  
   
 }
 
@@ -129,18 +153,7 @@ $(document).ready(function() {
   });
 });
 
-async function request() {
-  const response = await fetch('http://nickname.hwanmoo.kr/?format=json&count=1',
-  {
-    mode : 'no-cors',
-    method: 'GET',
-  });
-  console.log(response)
-
-  
-}
-
-async function post(host, path, body, headers = {}) {
+async function postAPI(host, path, body, headers = {}) {
   const url = `http://${host}/${path}`;
   const options = {
     method: "POST",
@@ -159,20 +172,17 @@ async function post(host, path, body, headers = {}) {
   }
 }
 
-async function get(host, path, headers = {}) {
-  const url = `https://${host}/${path}`;
+
+async function getAPI(host, path, headers = {}) {
+  const url = `http://${host}/${path}`;
+  console.log(url);
   const options = {
-    method: "GET",
-    mode: "no-cors",
-    headers: {
-      "Content-Type": "application/json",
-      ...headers,
-    },
+    method: "GET"
   };
   const res = await fetch(url, options);
   const data = res.json();
-  console.log(res)
-  console.log(data)
+  // console.log(res)
+  // console.log(data)
   if (res.ok) {
     return data;
   } else {
