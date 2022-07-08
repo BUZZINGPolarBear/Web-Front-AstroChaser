@@ -37,7 +37,6 @@ window.onload = function(){
   }
   loop();
   //랜덤 닉네임 생성하기
-  console.log(getRandomArbitrary(0, animalNames.length));
   $("#guestbookCommit_nickname").attr("placeholder", "익명의 " + animalNames[getRandomArbitrary(0, animalNames.length)])
 
   //방명록 전시하기
@@ -68,6 +67,9 @@ window.onload = function(){
   //방명록 게시하기
   const guestbookCommitBtn = document.getElementById("guestbookCommitBtn");
   guestbookCommitBtn.onclick = guestbookCommitBtnClicked;
+
+  //천문력 받아오기
+  getAstroInfoCalender('2022', '07')
 }
 
 function loop(){
@@ -169,7 +171,7 @@ async function guestbookCommitBtnClicked(event){
   if(document.getElementById("guestbookCommit_nickname").value == "") {
     nickname = $("#guestbookCommit_nickname").attr("placeholder");
   }
-  else nickname = document.getElementById("guestbookCommit_nickname").value();
+  else nickname = document.getElementById("guestbookCommit_nickname").value;
 
   var message="";
   if(guestbookContent.value=="") alert("방명록 내용을 입력해주세요.");
@@ -195,7 +197,13 @@ async function guestbookCommitBtnClicked(event){
       
     
   }
+}
 
+//천문정보 API 받아오기
+async function getAstroInfoCalender(solYear, solMonth){
+   const astroInfoData = await getAPI("https://cors-anywhere.herokuapp.com/http://apis.data.go.kr", astroCalenderApiURL + `solYear=${solYear}&solMonth=${solMonth}`)
+
+   console.log(astroInfoData);
 }
 
 //post API
@@ -218,9 +226,9 @@ async function postAPI(host, path, body, headers = {}) {
   }
 }
 
-//get API
+//get API AS JSON
 async function getAPI(host, path, headers = {}) {
-  const url = `http://${host}/${path}`;
+  const url = `https://${host}/${path}`;
   console.log(url);
   const options = {
     method: "GET"
@@ -236,6 +244,27 @@ async function getAPI(host, path, headers = {}) {
   }
 }
 
+//XML 형식 응답 -> json으로 반환하기
+async function getXMLAPI(host, path, headers = {}) {
+  const url = `http://${host}/${path}`;
+  console.log(url);
+  const options = {
+    method: "GET"
+  };
+  const res = await fetch(url, options);
+
+  var x2js = new X2JS();
+  const data = JSON.stringify(x2js.xml_str2json(res));
+  // console.log(res)
+  // console.log(data)
+  if (res.ok) {
+    return data;
+  } else {
+    throw new Error(data);
+  }
+}
+
+//min <-> max 사이 랜덤 숫자 반환
 function getRandomArbitrary(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
