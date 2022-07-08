@@ -12,7 +12,6 @@ let scrollCnt = 0;
 var context, canvas;
 var sattelliteStartScroll, sattellite;
 var isIntoTheStarsEnd = false; 
-
 const animalNames =[
   "강아지", "고양이", "고릴라", "침팬지", "갈매기", "비둘기", "호랑이", "야옹이", "폼폼이", "재경이", "이시형", "전준휘", "별지기", "송골매",
   "강호동", "남도일", "케로로", "호돌이", "코뿔소", "구렁이", "사다리", "북극곰", "탄지로", "뽀로로", "스컹크", "김동헌", "원숭이", "알파카"
@@ -37,13 +36,13 @@ window.onload = function(){
     y = (e.clientY - window.innerHeight / 2);
   }
   loop();
-  //방명록 게시하기
+  //랜덤 닉네임 생성하기
   console.log(getRandomArbitrary(0, animalNames.length));
   $("#guestbookCommit_nickname").attr("placeholder", "익명의 " + animalNames[getRandomArbitrary(0, animalNames.length)])
 
   //방명록 전시하기
   async function showGuestbookData(){
-    const guestbookData = await getAPI('localhost:8000', 'app/guestbook');
+    const guestbookData = await getAPI(hostAddress, 'app/guestbook');
   
     console.log(guestbookData.result);
     for(var i=0; i<guestbookData.result.length; i++)
@@ -66,8 +65,9 @@ window.onload = function(){
   }
   showGuestbookData();
 
-  
-  
+  //방명록 게시하기
+  const guestbookCommitBtn = document.getElementById("guestbookCommitBtn");
+  guestbookCommitBtn.onclick = guestbookCommitBtnClicked;
 }
 
 function loop(){
@@ -161,6 +161,44 @@ $(document).ready(function() {
   });
 });
 
+//방명록 게시하기
+async function guestbookCommitBtnClicked(event){
+  event.preventDefault();
+
+  var nickname="";
+  if(document.getElementById("guestbookCommit_nickname").value == "") {
+    nickname = $("#guestbookCommit_nickname").attr("placeholder");
+  }
+  else nickname = document.getElementById("guestbookCommit_nickname").value();
+
+  var message="";
+  if(guestbookContent.value=="") alert("방명록 내용을 입력해주세요.");
+  else{
+    const postGuestbookData = {
+      writer: nickname,
+      content: guestbookContent.value
+    }
+    postAPI(hostAddress, 'app/guestbook', postGuestbookData)
+      .then((data) => {
+        // console.log(data)
+        // console.log(data.isSuccess);
+        // console.log(data.message);
+        if(data.isSuccess == false){
+          alert("방명록을 작성에 실패했습니다.");
+        }
+
+        if(data.isSuccess == true){
+          window.location.reload()
+        }
+      })
+      .catch((error) => console.log(error));
+      
+    
+  }
+
+}
+
+//post API
 async function postAPI(host, path, body, headers = {}) {
   const url = `http://${host}/${path}`;
   const options = {
@@ -180,7 +218,7 @@ async function postAPI(host, path, body, headers = {}) {
   }
 }
 
-
+//get API
 async function getAPI(host, path, headers = {}) {
   const url = `http://${host}/${path}`;
   console.log(url);
