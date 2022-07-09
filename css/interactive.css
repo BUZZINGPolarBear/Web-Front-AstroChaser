@@ -263,3 +263,7 @@ section.subPage.hexagons {
 	pointer-events: none;
 	background: rgba(255,255,255,0.02);
 }
+
+.guestbook-page-navigator{
+  margin-top: 5px;
+}

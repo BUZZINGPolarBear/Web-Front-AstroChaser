@@ -8,6 +8,7 @@ let mx = 0;
 let my = 0;
 let speed = 0.009;
 let scrollCnt = 0;
+let guestbookPageCnt = 0;
 
 var context, canvas;
 var sattelliteStartScroll, sattellite;
@@ -40,15 +41,15 @@ window.onload = function(){
   $("#guestbookCommit_nickname").attr("placeholder", "익명의 " + animalNames[getRandomArbitrary(0, animalNames.length)])
 
   //방명록 전시하기
-  async function showGuestbookData(){
+  async function showGuestbookData(guestbookPageCnt){
     const guestbookData = await getAPI(hostAddress, 'app/guestbook');
   
     console.log(guestbookData.result);
-    for(var i=0; i<guestbookData.result.length; i++)
+    for(var i=0; i<5; i++)
     {
-      var writer = guestbookData.result[i].writer;
-      var time = guestbookData.result[i].createdAt.substring(0,10) + " " + guestbookData.result[i].createdAt.substring(12,16);
-      var message = guestbookData.result[i].content;
+      var writer = guestbookData.result[guestbookPageCnt*5+i].writer;
+      var time = guestbookData.result[guestbookPageCnt*5+i].createdAt.substring(0,10) + " " + guestbookData.result[guestbookPageCnt*5+i].createdAt.substring(12,16);
+      var message = guestbookData.result[guestbookPageCnt*5+i].content;
 
       var html ='';
       html=(`<div class="guestbook-area-contents">
@@ -62,14 +63,11 @@ window.onload = function(){
       $(".guestbook-area").append(html);
     }
   }
-  showGuestbookData();
+  showGuestbookData(0);
 
   //방명록 게시하기
   const guestbookCommitBtn = document.getElementById("guestbookCommitBtn");
   guestbookCommitBtn.onclick = guestbookCommitBtnClicked;
-
-  //천문력 받아오기
-  getAstroInfoCalender('2022', '07')
 }
 
 function loop(){
@@ -149,7 +147,6 @@ function introduceScroll()
 function endIntoTheStarsImg()
 {
   isIntoTheStarsEnd=true;
- 
 }
 
 $(document).ready(function() {
@@ -199,13 +196,6 @@ async function guestbookCommitBtnClicked(event){
   }
 }
 
-//천문정보 API 받아오기
-async function getAstroInfoCalender(solYear, solMonth){
-   const astroInfoData = await getAPI("https://cors-anywhere.herokuapp.com/http://apis.data.go.kr", astroCalenderApiURL + `solYear=${solYear}&solMonth=${solMonth}`)
-
-   console.log(astroInfoData);
-}
-
 //post API
 async function postAPI(host, path, body, headers = {}) {
   const url = `http://${host}/${path}`;
@@ -228,7 +218,7 @@ async function postAPI(host, path, body, headers = {}) {
 
 //get API AS JSON
 async function getAPI(host, path, headers = {}) {
-  const url = `https://${host}/${path}`;
+  const url = `http://${host}/${path}`;
   console.log(url);
   const options = {
     method: "GET"
